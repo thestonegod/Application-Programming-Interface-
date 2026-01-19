@@ -22,10 +22,15 @@ fetch('https://pokeapi.co/api/v2/pokemon/raichu')
             throw new Error("Can't find such a resource");
            }  
           const data = await response.json();
-         console.log(data);A
+          const pokemonImage = data.sprites.front_default;
+          const ImgElement = document.getElementById('pokemonImage');
+
+          ImgElement.src = pokemonImage;
+          ImgElement.style.display = 'block';
+
             }
             catch(error){
                 console.error(error);
             }
         
-    } fetchData();
+    } 
