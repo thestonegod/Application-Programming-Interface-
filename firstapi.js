@@ -10,12 +10,13 @@ fetch('https://pokeapi.co/api/v2/pokemon/raichu')
     .then(data => console.log(data))
     .catch(error => console.error(error)); 
 
-    fetData();
+    
 
-    async function fetData() {
+    async function fetchData() {
 
         try{
-             const response = await fetch('https://pokeapi.co/api/v2/pokemon/typhlosion');
+            const searchPokemon = document.getElementById('searchPokemon').value.toLowerCase();
+             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchPokemon}`);
 
              if(!response.ok){
             throw new Error("Can't find such a resource");
@@ -27,4 +28,4 @@ fetch('https://pokeapi.co/api/v2/pokemon/raichu')
                 console.error(error);
             }
         
-    }
+    } fetchData();
