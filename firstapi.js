@@ -19,11 +19,12 @@ fetch('https://pokeapi.co/api/v2/pokemon/raichu')
 
              if(!response.ok){
             throw new Error("Can't find such a resource");
-        }
-        
-        }
-        catch(error){
-            console.error(error);
-        }
+           }  
+          const data = await response.json();
+         console.log(data);
+            }
+            catch(error){
+                console.error(error);
+            }
         
     }
