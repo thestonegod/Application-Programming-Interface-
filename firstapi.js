@@ -37,4 +37,11 @@ fetch('https://pokeapi.co/api/v2/pokemon/raichu')
 
     //Pass the API into the function. It takes a request object {} and returns a response {}. JS sets default values when you don't pass any values.
     //Fetch() is asynchronous and returns a promise that resolves to the Response object representing the response to the request.
-    //
+    //{Response object}
+    const url = 'https://worldtimeapi.org/api/timezone/Africa/Cairo';
+    async function getTime() {
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data)  
+    }
+    getTime();
