@@ -45,3 +45,18 @@ fetch('https://pokeapi.co/api/v2/pokemon/raichu')
         console.log(data)  
     }
     getTime();
+
+    //
+    const urlMusic = 'https://api.spotify.com/v1/artists/0k17h0D3J5VfsdmQ1iZtE8';
+    async function getMusic() {
+        const request = new Request(urlMusic, {
+            headers: {
+                "Authorization": 'Bearer'
+            }
+        });
+
+        const response = await fetch(request)
+        const data = await response.json()
+        console.log(data)  
+    }
+    getMusic();
